@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CazaOfertas – Blog de Proyecto</title>
+  <meta name="description" content="Blog académico del proyecto CazaOfertas: plataforma de ofertas y promociones locales (enfocado en ropa)." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Enlace al CSS externo -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/gallery.css" />
+  <script src="assets/js/gallery.js" defer></script>
+
+</head>
+
+<body>
+  <header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="logo">CO</div>
+      <div class="title">CazaOfertas · Blog</div>
+    </div>
+
+    <!-- botón hamburguesa (se muestra ≤900px) -->
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-panel">
+      ☰
+    </button>
+
+    <!-- menú desktop -->
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#objetivo">Objetivo</a>
+      <a href="#misionvision">Misión - Visión</a>
+      <a href="#problema">Problema</a>
+      <a href="#tecnologia">Tecnología</a>
+      <a href="#avances">Avances</a>
+      <a href="#autor">Acerca de</a>
+    </nav>
+  </div>
+</header>
+
+<!-- panel móvil (MISMO contenido) -->
+<nav class="menu-panel" id="menu-panel" aria-hidden="true">
+  <a href="#inicio">Inicio</a>
+  <a href="#objetivo">Objetivo</a>
+  <a href="#misionvision">Misión - Visión</a>
+  <a href="#problema">Problema</a>
+  <a href="#tecnologia">Tecnología</a>
+  <a href="#avances">Avances</a>
+  <a href="#autor">Acerca de</a>
+</nav>
+
+<!-- fondo para cerrar al tocar fuera -->
+<div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
+
+
+  <section id="inicio">
+    <h1>CazaOfertas: ofertas de ropa en tiempo real</h1>
+    <p>
+      <strong>CazaOfertas</strong>, es una aplicación móvil diseñada para centralizar y mostrar ofertas de ropa de comercios locales, permitiendo a los usuarios buscarlas por categoría, palabra clave o ubicación. Su objetivo es facilitar el acceso a descuentos 
+      y al mismo tiempo impulsar la visibilidad de las tiendas en el mercado digital.
+    </p>
+    <div class="hero-banner">
+  <img src="assets/img/hero-cazaofertas.jpg" alt="CazaOfertas">
+</div>
+  </section>
+
+  <section id="objetivo">
+    <h2>🎯 Objetivo General</h2>
+    <p>
+      Desarrollar una aplicación móvil que permita a los comercios locales de ropa publicar y gestionar sus ofertas en tiempo real, brindando a los usuarios una herramienta rápida y confiable para encontrar descuentos cercanos.
+    </p>
+    <div class="card">
+      <h3>Objetivos Específicos</h3>
+      <ul>
+        <li>Diseñar una interfaz móvil intuitiva que centralice promociones de ropa por tienda y categoría.</li>
+        <li>Implementar registro y autenticación para comercios y usuarios.</li>
+        <li>Incorporar búsqueda y filtrado por categoría, palabra clave y ubicación geográfica.</li>
+        <li>Integrar un mapa interactivo para visualizar descuentos cercanos (Google Maps).</li>
+        <li>Desarrollar un panel básico para que los comercios gestionen sus ofertas activas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="misionvision">
+  <h2>🚀 Misión y 🌟 Visión</h2>
+  <div class="grid cols-2">
+
+    <!-- Misión -->
+    <div class="card mv-card">
+      <div class="mv-bg" style="background-image:url('assets/img/mision.jpg');"></div>
+      <div class="mv-overlay"></div>
+      <div class="mv-content">
+        <h3>Misión</h3>
+        <p>
+          Conectar comercios locales de ropa con consumidores mediante una aplicación móvil sencilla y accesible,
+          que promueva el ahorro y potencie la visibilidad digital de los negocios.
+        </p>
+      </div>
+    </div>
+
+    <!-- Visión -->
+    <div class="card mv-card">
+      <div class="mv-bg" style="background-image:url('assets/img/vision.jpg');"></div>
+      <div class="mv-overlay"></div>
+      <div class="mv-content">
+        <h3>Visión</h3>
+        <p>
+          Convertirse en la aplicación de referencia para descubrir ofertas de moda en el mercado local, impulsando
+          la digitalización de los comercios y mejorando la experiencia de compra de los usuarios.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <section id="problema">
+    <h2>🧩 Planteamiento del Problema</h2>
+    <p>
+      Actualmente, muchos comercios de ropa dependen de publicidad tradicional o publicaciones informales en redes sociales, con bajo alcance y segmentación limitada.
+      Por otro lado, los consumidores invierten tiempo en buscar descuentos confiables sin una herramienta centralizada que facilite el proceso.
+    </p>
+    <p>
+      Esto genera la necesidad de una <strong>aplicación móvil</strong> que unifique la gestión de promociones y su consulta por parte de los usuarios, ofreciendo filtros avanzados y mapas interactivos para optimizar la búsqueda de descuentos.
+    </p>
+  </section>
+
+  <section id="tecnologia">
+    <h2>🛠️ Tecnologías</h2>
+    <div class="grid cols-2">
+      <div class="card"><strong>Frontend (App Móvil)</strong><br/>React Native con Expo</div>
+      <div class="card"><strong>Backend</strong><br/>Node.js + Express (alojado en Render)</div>
+      <div class="card"><strong>Base de Datos</strong><br/>PostgreSQL en Supabase</div>
+      <div class="card"><strong>Servicios</strong><br/>Google Maps API + infraestructura en la nube (Render + Supabase)</div>
+    </div>
+  </section>
+
+  <section id="avances">
+    <h2>🗓️ Avances del Proyecto</h2>
+    <div class="timeline">
+      <div class="event card">
+        <div class="dot"></div>
+        <h4>Fase I - Información</h4>
+        <p>Publicación inicial con Objetivo general, Objetivos específicos, Misión, Visión y Planteamiento del problema.</p>
+      </div>
+    </div>
+  </section>
+
+<section id="galeria" class="gallery">
+  <h2>📸 Galería de la Aplicación</h2>
+
+  <div class="carousel-wrap outside">
+    <button class="nav-btn prev outside" id="car-prev" aria-label="Anterior">‹</button>
+
+    <!-- Viewport recorta; Track se mueve -->
+    <div class="viewport" aria-live="polite">
+      <div class="track">
+        <!-- 1 -->
+        <article class="card">
+          <button class="thumb"
+                  data-image=""
+                  data-title="Registro y Autenticación"
+                  data-desc="Pantallas de creación de cuenta, inicio de sesión y recuperación.">
+            <div class="placeholder">En desarrollo</div>
+          </button>
+          <h3>Registro y Autenticación</h3>
+        </article>
+
+        <!-- 2 -->
+        <article class="card">
+          <button class="thumb"
+                  data-image=""
+                  data-title="Publicación de Ofertas"
+                  data-desc="Flujo para crear, editar y activar promociones de ropa.">
+            <div class="placeholder">En desarrollo</div>
+          </button>
+          <h3>Publicación de Ofertas</h3>
+        </article>
+
+        <!-- 3 -->
+        <article class="card">
+          <button class="thumb"
+                  data-image=""
+                  data-title="Búsqueda y Filtrado"
+                  data-desc="Lista de resultados con filtros por categoría, palabra clave y ubicación.">
+            <div class="placeholder">En desarrollo</div>
+          </button>
+          <h3>Búsqueda y Filtrado</h3>
+        </article>
+
+        <!-- 4 -->
+        <article class="card">
+          <button class="thumb"
+                  data-image=""
+                  data-title="Mapa de Ofertas"
+                  data-desc="Mapa interactivo con ofertas cercanas y detalles de cada tienda.">
+            <div class="placeholder">En desarrollo</div>
+          </button>
+          <h3>Mapa de Ofertas</h3>
+        </article>
+
+        <!-- 5 -->
+        <article class="card">
+          <button class="thumb"
+                  data-image=""
+                  data-title="Detalle de Oferta"
+                  data-desc="Ficha con precio original, descuento, vigencia, imágenes y ubicación.">
+            <div class="placeholder">En desarrollo</div>
+          </button>
+          <h3>Detalle de Oferta</h3>
+        </article>
+
+        <!-- 6 -->
+        <article class="card">
+          <button class="thumb"
+                  data-image=""
+                  data-title="Panel del Comercio"
+                  data-desc="Panel para administrar ofertas activas e historial.">
+            <div class="placeholder">En desarrollo</div>
+          </button>
+          <h3>Panel del Comercio</h3>
+        </article>
+
+        <!-- 7 -->
+        <article class="card">
+          <button class="thumb"
+                  data-image=""
+                  data-title="Métricas y Retroalimentación"
+                  data-desc="Indicadores de vistas, clics y calificaciones para mejorar promociones.">
+            <div class="placeholder">En desarrollo</div>
+          </button>
+          <h3>Métricas y Retroalimentación</h3>
+        </article>
+
+        <!-- 8 -->
+        <article class="card">
+          <button class="thumb"
+                  data-image=""
+                  data-title="Seguridad y Gestión de Usuarios"
+                  data-desc="Roles, permisos y protección de datos.">
+            <div class="placeholder">En desarrollo</div>
+          </button>
+          <h3>Seguridad y Gestión de Usuarios</h3>
+        </article>
+      </div>
+    </div>
+
+    <button class="nav-btn next outside" id="car-next" aria-label="Siguiente">›</button>
+  </div>
+
+ <!-- Lightbox / Ventana flotante -->
+<div id="lightbox" class="lightbox" hidden aria-hidden="true">
+  <button class="lb-close" aria-label="Cerrar">✕</button>
+  <button class="lb-prev" aria-label="Anterior">‹</button>
+  <img alt="" />
+  <button class="lb-next" aria-label="Siguiente">›</button>
+  <header>
+    <h4 class="lb-title"></h4>
+    <p class="lb-desc muted"></p>
+  </header>
+</div>
+</section>
+
+  <section id="autor">
+    <h2>ℹ️ Información del Proyecto</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3 style="margin:0 0 6px">Desarrollado por:</h3>
+        <p><strong>Angel Sanchez</strong></p>
+        <p>Estudiante de Ingeniería en Informática</p>
+        <p>Universidad Nacional Experimental del Táchira</p>
+        <p>Contacto: <a href="mailto:angelg.sanchez@unet.edu.ve">angelg.sanchez@unet.edu.ve</a></p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 6px">Datos del Proyecto</h3>
+        <p><strong>Título:</strong> CazaOfertas</p>
+        <p>Este blog documenta las fases del proyecto y sus avances.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    © <span id="year"></span> CazaOfertas · Blog académico
+  </footer>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

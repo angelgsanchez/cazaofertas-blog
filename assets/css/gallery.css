@@ -1,0 +1,166 @@
+
+/* Contenedor principal del carrusel */
+.carousel-wrap.outside {
+  position: relative;
+  margin-top: 8px;
+}
+
+/* Viewport: recorta lo que se sale; el .track se mueve */
+.gallery .viewport {
+  overflow: hidden;
+}
+
+/* Track: fila flexible de tarjetas con separación */
+.gallery .track {
+  display: flex;
+  gap: 16px;                  /* ¡OJO! Este valor debe coincidir con GAP en JS */
+  transform: translateX(0);
+  will-change: transform;
+}
+
+/* Tarjeta (3 visibles en desktop) */
+.gallery .card {
+  min-width: calc((100% - 32px) / 3);
+  background: linear-gradient(180deg,#0b1220,#0a1324);
+  border: 1px solid var(--ring);
+  border-radius: 16px;
+  padding: 18px;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.gallery .card:hover {
+  transform: scale(1.05); /* 👈 hace que se vea 5% más grande */
+  box-shadow: 0 22px 50px rgba(0,0,0,.45);
+  z-index: 10; /* 👈 asegura que sobresalga sobre las otras */
+}
+
+
+/* En móvil: 1 tarjeta casi a pantalla completa */
+@media (max-width: 899px) {
+  .gallery .card { min-width: 88%; }
+}
+
+/* Miniatura dentro de la tarjeta */
+.gallery .thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  border: 1px solid var(--ring);
+  background: #0b1220 center/cover no-repeat;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.gallery .thumb .placeholder {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  color: var(--muted); font-weight: 700;
+  user-select: none;
+}
+.gallery h3 { margin: 10px 0 0; }
+
+/* ===== Botones de navegación (por fuera) ===== */
+.nav-btn.outside {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  border: 1px solid var(--ring);
+  background: #0b1220;
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+  user-select: none;
+}
+.nav-btn.outside:hover {
+  transform: translateY(-50%) scale(1.06);
+  background: #0c1528;
+  box-shadow: 0 14px 30px rgba(0,0,0,.45);
+}
+.nav-btn.prev.outside { left: -38px; }
+.nav-btn.next.outside { right: -38px; }
+
+/* Ocultar botones en móvil (se navega con swipe) 
+@media (max-width: 899px) {
+  .nav-btn.outside { display: none; }
+}
+*/
+
+/* Durante la animación, desactivar clics para evitar dobles triggers */
+.gallery .viewport.animating,
+.gallery .viewport.animating * {
+  pointer-events: none !important;
+}
+
+/* ===== Lightbox (si lo tienes junto a la galería) ===== */
+.lightbox[hidden]{ display:none; }
+.lightbox{
+  position:fixed; inset:0; z-index:80;
+  background:rgba(2,6,23,.75);
+  backdrop-filter: blur(6px);
+  display:grid; place-items:center;
+  padding:20px;
+}
+.lightbox img{
+  max-width:min(100%,1100px);
+  max-height:70vh;
+  border-radius:14px;
+  border:1px solid var(--ring);
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+  background:#000;
+}
+.lightbox header{ margin-top:12px; text-align:center; }
+.lb-close{
+  position:absolute; top:18px; right:18px;
+  background:#0b1220; color:var(--text);
+  border:1px solid var(--ring);
+  border-radius:10px; padding:8px 10px; cursor:pointer;
+}
+.lb-close:hover{ background:#0c1528; }
+
+/* Botones de navegación dentro del lightbox */
+.lb-prev, .lb-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7); /* círculo blanco translúcido */
+  color: #111; /* flecha oscura */
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background .2s;
+}
+
+.lb-prev:hover, .lb-next:hover {
+  background: rgba(255, 255, 255, 0.9); /* más sólido al pasar el mouse */
+}
+
+.lb-prev { left:25%; }
+.lb-next { right:25%; }
+
+/* Mostrar flechas en móvil y colocarlas dentro del viewport */
+.carousel-wrap { position: relative; overflow: visible; }  /* por si algún padre recorta */
+
+.nav-btn.outside{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;                /* encima de las cards */
+  display: block !important; /* fuerza visibilidad aunque haya reglas viejas */
+}
+
+/* Móvil: 1 tarjeta y flechas pegadas a los lados visibles */
+@media (max-width: 900px){
+  .gallery .card{ min-width:100%; }
+  .nav-btn.prev.outside { left: 8px; }
+  .nav-btn.next.outside { right: 8px; }
+}
+
