@@ -36,6 +36,8 @@
       <a href="#tecnologia">Tecnología</a>
       <a href="#avances">Avances</a>
       <a href="#autor">Acerca de</a>
+      <a href="#metodologias">Levantamiento</a>
+
     </nav>
   </div>
 </header>
@@ -49,6 +51,7 @@
   <a href="#tecnologia">Tecnología</a>
   <a href="#avances">Avances</a>
   <a href="#autor">Acerca de</a>
+  <a href="#metodologias">Levantamiento</a>
 </nav>
 
 <!-- fondo para cerrar al tocar fuera -->
@@ -67,7 +70,7 @@
   </section>
 
   <section id="objetivo">
-    <h2> Objetivo General</h2>
+    <h2> Objetivo general</h2>
     <p>
       Desarrollar una aplicación móvil que permita a los comercios locales de ropa publicar y gestionar sus ofertas en tiempo real, brindando a los usuarios una herramienta rápida y confiable para encontrar descuentos cercanos.
     </p>
@@ -84,7 +87,7 @@
   </section>
 
   <section id="misionvision">
-  <h2> Misión y  Visión</h2>
+  <h2> Misión y visión</h2>
   <div class="grid cols-2">
 
     <!-- Misión -->
@@ -118,7 +121,7 @@
 
 
   <section id="problema">
-    <h2> Planteamiento del Problema</h2>
+    <h2> Planteamiento del problema</h2>
     <p>
       Actualmente, muchos comercios de ropa dependen de publicidad tradicional o publicaciones informales en redes sociales, con bajo alcance y segmentación limitada.
       Por otro lado, los consumidores invierten tiempo en buscar descuentos confiables sin una herramienta centralizada que facilite el proceso.
@@ -138,19 +141,127 @@
     </div>
   </section>
 
-  <section id="avances">
-    <h2> Avances del Proyecto</h2>
-    <div class="timeline">
-      <div class="event card">
-        <div class="dot"></div>
-        <h4>Fase I - Información</h4>
-        <p>Publicación inicial con Objetivo general, Objetivos específicos, Misión, Visión y Planteamiento del problema.</p>
-      </div>
+  <section id="metodologias">
+  <h2>Metodologías del ciclo de vida aplicadas</h2>
+  <p>
+    En <strong>CazaOfertas</strong> aplicaremos dos técnicas del ciclo de vida para asegurar que los 
+    requisitos del proyecto estén bien definidos y que la aplicación sea útil 
+    para los usuarios: 
+    <strong>Planeación conjunta de requerimientos (JRP)</strong> y 
+    <strong>Casos de Uso</strong>.
+  </p>
+
+  <div class="grid cols-2">
+    <!-- JRP -->
+    <div class="card">
+      <h3>1. Planeación conjunta de requerimientos (JRP)</h3>
+      <p>
+        Es una técnica que consiste en reunir en un mismo espacio a los 
+        interesados principales (usuarios y comercios) junto con el desarrollador 
+        del proyecto para identificar necesidades, priorizar funciones y evitar 
+        malentendidos.
+      </p>
+      <h4>Cómo se aplicará en CazaOfertas:</h4>
+      <ul>
+        <li>Consultar a <strong>comerciantes de ropa locales</strong> y <strong>usuarios comunes</strong> sobre qué funcionalidades son más importantes.</li>
+        <li>Definir un <strong>backlog inicial</strong> con las funciones priorizadas (ej. publicar ofertas, buscarlas en mapa, aplicar filtros).</li>
+        <li>Clasificar la importancia de cada requisito para guiar el desarrollo del MVP.</li>
+      </ul>
+      <h4>Beneficios:</h4>
+      <ul>
+        <li>Visión clara y compartida de lo que se va a construir.</li>
+        <li>Menos riesgo de malinterpretar necesidades.</li>
+        <li>Ayuda a decidir qué funciones tendrá la primera versión de la app.</li>
+      </ul>
     </div>
-  </section>
+
+    <!-- Casos de Uso -->
+    <div class="card">
+      <h3>2. Casos de uso</h3>
+      <p>
+        Son diagramas o descripciones que muestran cómo interactúan los 
+        <strong>usuarios</strong> con el sistema. Sirven para detallar qué hará 
+        la aplicación en cada situación y validar que cubra las necesidades detectadas.
+      </p>
+      <h4>Cómo se aplicará en CazaOfertas:</h4>
+      <ul>
+        <li><strong>Usuario:</strong> buscar ofertas, aplicar filtros y verlas en el mapa.</li>
+        <li><strong>Comercio:</strong> publicar ofertas, editarlas y ver métricas simples.</li>
+        <li><strong>(Opcional) Admin:</strong> supervisar el uso general de la app.</li>
+      </ul>
+      <h4>Casos de uso clave (MVP):</h4>
+      <ul>
+        <li>Buscar ofertas por categoría y palabra clave.</li>
+        <li>Ver ofertas en un mapa e iniciar la ruta.</li>
+        <li>Registrarse / Iniciar sesión.</li>
+        <li>Publicar oferta con descripción, precio y fotos.</li>
+        <li>Ver métricas básicas (clics o visualizaciones).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="evidencias">
+  <h2>Evidencias del proyecto</h2>
+  <p class="muted">
+    Aquí se incorporarán los documentos y resultados generados durante el proceso 
+    (Acta JRP, casos de uso y matriz PIECES), una vez realizados en el proyecto real.
+  </p>
+
+  <!-- Acta JRP -->
+  <article class="card">
+    <h3>Acta JRP</h3>
+    <p class="muted">(Evidencia pendiente por registrar)</p>
+  </article>
+
+  <!-- Casos de Uso -->
+  <article class="card" style="margin-top:16px">
+    <h3>Paquete de Casos de Uso</h3>
+    <p class="muted">(Evidencia pendiente por registrar)</p>
+  </article>
+
+  <!-- Matriz PIECES -->
+  <article class="card" style="margin-top:16px">
+    <h3>Matriz PIECES</h3>
+    <p class="muted">(Evidencia pendiente por registrar: requisitos no funcionales — rendimiento, disponibilidad, facilidad de uso, etc.).</p>
+  </article>
+
+  <p class="muted" style="margin-top:12px">
+    Fundamentado en los capítulos 5 (exploración y JRP) y 6 (modelado con Casos de Uso) del libro de Análisis y Diseño.
+  </p>
+</section>
+
+
+<section id="avances">
+  <h2>Avances del proyecto</h2>
+  <div class="timeline">
+    <!-- Fase I -->
+    <div class="event card">
+      <div class="dot"></div>
+      <h4>Fase I - Fase de información</h4>
+      <p>
+        Publicación inicial con Objetivo general, Objetivos específicos, Misión, 
+        Visión y Planteamiento del problema.
+      </p>
+    </div>
+
+    <!-- Fase II -->
+    <div class="event card">
+      <div class="dot"></div>
+      <h4>Fase II - Técnicas de levantamiento de informacion</h4>
+      <p>
+        Incorporación de las técnicas de levantamiento de informacion como la 
+        <strong>Planeación conjunta de requerimientos (JRP)</strong> y 
+        <strong>Casos de uso</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
 
 <section id="galeria" class="gallery">
-  <h2> Galería de la Aplicación</h2>
+  <h2> Galería de la aplicación</h2>
 
   <div class="carousel-wrap outside">
     <button class="nav-btn prev outside" id="car-prev" aria-label="Anterior">‹</button>
