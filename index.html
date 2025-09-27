@@ -5,69 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CazaOfertas – Blog de Proyecto</title>
   <meta name="description" content="Blog académico del proyecto CazaOfertas: plataforma de ofertas y promociones locales (enfocado en ropa)." />
+  
+  <!-- Fuente -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Enlace al CSS externo -->
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/gallery.css" />
-  <script src="assets/js/gallery.js" defer></script>
 
+  <!-- JS -->
+  <script src="assets/js/gallery.js" defer></script>
+  <script src="assets/js/ui.js" defer></script>
 </head>
 
 <body>
-  <header class="nav">
-  <div class="nav-inner">
-    <div class="brand">
+  <!-- Sidebar (visible en escritorio) -->
+  <aside class="sidebar">
+    <div class="sb-brand">
       <div class="logo">CO</div>
-      <div class="title">CazaOfertas · Blog</div>
+      <div class="sb-title">CazaOfertas · Blog</div>
     </div>
-
-    <!-- botón hamburguesa (se muestra ≤900px) -->
-    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-panel">
-      ☰
-    </button>
-
-    <!-- menú desktop -->
-    <nav class="menu">
+    <nav class="sidemenu">
       <a href="#inicio">Inicio</a>
       <a href="#objetivo">Objetivo</a>
       <a href="#misionvision">Misión - Visión</a>
       <a href="#problema">Problema</a>
       <a href="#tecnologia">Tecnología</a>
-      <a href="#avances">Avances</a>
-      <a href="#autor">Acerca de</a>
       <a href="#metodologias">Levantamiento</a>
-
+      <a href="#avances">Avances</a>
+      <a href="#galeria">Galería</a>
+      <a href="#autor">Acerca de</a>
     </nav>
-  </div>
-</header>
+  </aside>
 
-<!-- panel móvil (MISMO contenido) -->
-<nav class="menu-panel" id="menu-panel" aria-hidden="true">
-  <a href="#inicio">Inicio</a>
-  <a href="#objetivo">Objetivo</a>
-  <a href="#misionvision">Misión - Visión</a>
-  <a href="#problema">Problema</a>
-  <a href="#tecnologia">Tecnología</a>
-  <a href="#avances">Avances</a>
-  <a href="#autor">Acerca de</a>
-  <a href="#metodologias">Levantamiento</a>
-</nav>
+  <!-- Topbar (solo móvil) -->
+  <header class="topbar">
+    <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+    <div class="tb-brand">
+      <div class="logo">CO</div>
+      <span>CazaOfertas · Blog</span>
+    </div>
+  </header>
 
-<!-- fondo para cerrar al tocar fuera -->
-<div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
+  <!-- Panel off-canvas para móvil -->
+  <nav class="menu-panel" id="menuPanel">
+    <a href="#inicio">Inicio</a>
+    <a href="#objetivo">Objetivo</a>
+    <a href="#misionvision">Misión - Visión</a>
+    <a href="#problema">Problema</a>
+    <a href="#tecnologia">Tecnología</a>
+    <a href="#metodologias">Levantamiento</a>
+    <a href="#avances">Avances</a>
+    <a href="#galeria">Galería</a>
+    <a href="#autor">Acerca de</a>
+  </nav>
 
+  <!-- Contenido principal -->
+  <main class="content">
+    <!-- Hero con título encima -->
+    <section id="inicio" class="hero">
+      <img src="assets/img/hero-cazaofertas.jpg" alt="CazaOfertas - promociones de ropa" />
+      <div class="hero-overlay">
+        <h1>CazaOfertas: ofertas de ropa en tiempo real</h1>
+        <p>
+          <strong>CazaOfertas</strong> es una aplicación móvil para centralizar y mostrar ofertas
+          de ropa de comercios locales, permitiendo buscarlas por categoría, palabra clave o ubicación.
+        </p>
+      </div>
+    </section>
 
-  <section id="inicio">
-    <h1>CazaOfertas: ofertas de ropa en tiempo real</h1>
-    <p>
-      <strong>CazaOfertas</strong>, es una aplicación móvil diseñada para centralizar y mostrar ofertas de ropa de comercios locales, permitiendo a los usuarios buscarlas por categoría, palabra clave o ubicación. Su objetivo es facilitar el acceso a descuentos 
-      y al mismo tiempo impulsar la visibilidad de las tiendas en el mercado digital.
-    </p>
-    <div class="hero-banner">
-  <img src="assets/img/hero-cazaofertas.jpg" alt="CazaOfertas">
-</div>
-  </section>
 
   <section id="objetivo">
     <h2> Objetivo general</h2>
@@ -397,6 +404,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
+  </main>
 </body>
 </html>
