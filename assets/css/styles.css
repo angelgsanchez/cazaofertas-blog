@@ -30,8 +30,7 @@ a {
   color: var(--brand);
 }
 
-/* =====================  (antiguo TOP NAV)  ===================== */
-/* La navegación superior antigua se desactiva para usar sidebar + topbar */
+/* ===================== Desactivar top nav antiguo ===================== */
 .nav {
   display: none !important;
 }
@@ -50,7 +49,6 @@ a {
   gap: 18px;
   z-index: 60;
 }
-
 .sb-brand {
   display: flex;
   align-items: center;
@@ -93,12 +91,12 @@ a {
 /* Contenido corre a la derecha del sidebar */
 .content {
   padding-left: calc(var(--sb-w) + 16px);
-  padding-right: 16px; /* ← añade este padding */
+  padding-right: 16px;
 }
 
 /* =====================  TOPBAR (móvil)  ===================== */
 .topbar {
-  display: none; /* solo se muestra < 900px */
+  display: none; /* se muestra < 1100px */
   position: sticky;
   top: 0;
   z-index: 70;
@@ -114,7 +112,7 @@ a {
   align-items: center;
   gap: 10px;
   color: var(--text);
-  font-weight: 700;s
+  font-weight: 700; /* <- typo arreglado */
 }
 
 /* Burger */
@@ -129,23 +127,22 @@ a {
   cursor: pointer;
 }
 
-/* Panel off-canvas (móvil) */
-/* Panel off-canvas (móvil, desde la izquierda) */
+/* ===================== Panel off-canvas (móvil, desde la izquierda) ===================== */
 .menu-panel {
   position: fixed;
-  left: 0; /* ⬅ sale desde la izquierda */
+  left: 0;
   top: 56px;
   bottom: 0;
   width: min(320px, 80vw);
   background: #0b1220ee;
   backdrop-filter: blur(10px);
-  border-right: 1px solid var(--ring); /* borde al lado opuesto */
+  border-right: 1px solid var(--ring);
   z-index: 80;
   display: flex;
   flex-direction: column;
   gap: 14px;
   padding: 18px;
-  transform: translateX(-100%); /* oculto hacia la izquierda */
+  transform: translateX(-100%);
   transition: transform 0.28s ease;
 }
 .menu-panel a {
@@ -167,7 +164,7 @@ body.menu-open {
   overflow: hidden;
 }
 
-/* Backdrop (si lo usas) */
+/* Backdrop */
 .menu-backdrop {
   position: fixed;
   inset: 0;
@@ -182,8 +179,7 @@ body.menu-open {
   pointer-events: auto;
 }
 
-/* Responsive: cuando no hay ancho, ocultar sidebar y mostrar topbar */
-/* Cambiamos el breakpoint a 1100px para que no tape contenido en pantallas medianas */
+/* Responsive: ocultar sidebar y mostrar topbar en medianos/pequeños */
 @media (max-width: 1100px) {
   .sidebar {
     display: none;
@@ -198,12 +194,11 @@ body.menu-open {
     top: 56px;
   }
 }
-
 @media (max-width: 480px) {
   .menu-panel {
     inset: 56px 0 0 0;
     width: auto;
-  } /* panel a ancho completo */
+  }
 }
 
 /* =====================  SECCIONES / LAYOUT  ===================== */
@@ -212,40 +207,6 @@ section {
   margin: 0 auto;
   padding: 40px 16px;
 }
-
-/* ====== Hero sin el límite de 1100px (ocupa todo el ancho del área de contenido) ====== */
-section.hero{
-  max-width: none;       /* ← anula el tope de 1100px */
-  margin: 24px 0 0;      /* sin márgenes laterales */
-  padding: 0;            /* sin padding del section genérico */
-}
-
-/* El bloque visual del hero (el que tiene el borde y el radio) */
-section.hero{
-  position: relative;
-  border: 1px solid var(--ring);
-  border-radius: 16px;
-  overflow: hidden;
-  background: linear-gradient(180deg, #0b1220, #0a1324);
-}
-
-/* Imagen + overlay como ya lo tienes */
-section.hero img{
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  display: block;
-}
-section.hero .hero-overlay{
-  position: absolute; inset: 0;
-  display: grid; align-content: center;
-  padding: clamp(14px, 4vw, 36px);
-  background: linear-gradient(180deg, rgba(2,6,23,.35), rgba(2,6,23,.55));
-}
-@media (max-width: 640px){
-  section.hero img{ height: 260px; }
-}
-
 h2 {
   font-size: clamp(22px, 3vw, 28px);
   margin: 0 0 8px;
@@ -279,6 +240,53 @@ li {
   border: 1px solid var(--ring);
   border-radius: 16px;
   padding: 18px;
+}
+
+/* =====================  HERO (título encima, full-width del área de contenido)  ===================== */
+.hero {
+  position: relative;
+  margin: 24px 0 0;
+  border: 1px solid var(--ring);
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0b1220, #0a1324);
+  width: 100%;
+}
+.hero img {
+  width: 100%;
+  height: 380px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.05) contrast(1.02);
+}
+.hero .hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  padding: clamp(14px, 4vw, 36px);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 6, 23, 0.35),
+    rgba(2, 6, 23, 0.55)
+  );
+}
+.hero .hero-overlay h1 {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 4.2vw, 42px);
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+.hero .hero-overlay p {
+  margin: 0;
+  max-width: 900px;
+  color: var(--text);
+}
+@media (max-width: 640px) {
+  .hero img {
+    height: 260px;
+  }
 }
 
 /* =====================  TIMELINE  ===================== */
@@ -317,58 +325,6 @@ footer {
   padding: 20px 16px;
   color: var(--muted);
   text-align: center;
-}
-
-/* =====================  HERO (título encima, full-width del área de contenido)  ===================== */
-.hero {
-  position: relative;
-  margin: 24px 0 0; /* ← elimina el margen lateral (antes: 24px 16px 0) */
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--ring);
-  background: linear-gradient(180deg, #0b1220, #0a1324); /* fallback */
-  width: 100%; /* ocupa todo el ancho del área de contenido */
-}
-
-.hero img {
-  width: 100%;
-  display: block;
-  height: 380px;
-  object-fit: cover;
-  object-position: center;
-  filter: saturate(1.05) contrast(1.02);
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  align-content: center;
-  padding: clamp(14px, 4vw, 36px);
-  background: linear-gradient(
-    180deg,
-    rgba(2, 6, 23, 0.35),
-    rgba(2, 6, 23, 0.55)
-  );
-}
-
-.hero-overlay h1 {
-  margin: 0 0 8px;
-  font-size: clamp(22px, 4.2vw, 42px);
-  color: #fff;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
-}
-
-.hero-overlay p {
-  margin: 0;
-  max-width: 900px;
-  color: var(--text);
-}
-
-@media (max-width: 640px) {
-  .hero img {
-    height: 260px;
-  }
 }
 
 /* =====================  Misión / Visión con fondo  ===================== */
@@ -410,7 +366,7 @@ footer {
   filter: brightness(0.95) saturate(1.08);
 }
 
-/* ===== Accesibilidad: reduce motion ===== */
+/* Accesibilidad: reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .mv-card .mv-bg,
   .hero img {
