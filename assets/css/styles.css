@@ -5,7 +5,7 @@
   --text: #e5e7eb;
   --brand: #22c55e;
   --brand-2: #14b8a6;
-  --card: #0b1220;
+  --card: #0b1220;s
   --ring: #334155;
 
   /* layout */
@@ -245,12 +245,14 @@ li {
 /* =====================  HERO (título encima, full-width del área de contenido)  ===================== */
 .hero {
   position: relative;
-  margin: 24px 0 0;
+  margin: 24px auto 0;
   border: 1px solid var(--ring);
   border-radius: 16px;
   overflow: hidden;
   background: linear-gradient(180deg, #0b1220, #0a1324);
   width: 100%;
+  max-width: 1200px; 
+  
 }
 .hero img {
   width: 100%;
