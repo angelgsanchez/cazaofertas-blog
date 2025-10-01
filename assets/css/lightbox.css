@@ -1,0 +1,67 @@
+/* ===== Lightbox (visor de imágenes ampliadas) ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--ring);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Botón de cierre */
+.lb-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  font-size: 32px;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--ring);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  cursor: pointer;
+  text-align: center;
+  z-index: 201;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.lb-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+/* ===== Hover en imágenes clicables ===== */
+.doc-figure img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: zoom-in;
+  border-radius: 12px;
+  border: 1px solid var(--ring);
+}
+
+.doc-figure img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  filter: brightness(1.05) saturate(1.05);
+}

@@ -1,0 +1,684 @@
+<!-- evaluacion2.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evaluación II – CazaOfertas</title>
+
+  <!-- Tu CSS general (si lo tienes) -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- CSS de esta página -->
+  <link rel="stylesheet" href="assets/css/evaluacion.css">
+</head> 
+<body>
+  <!-- Sidebar (desktop) -->
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <div class="logo">CO</div>
+      <div class="sb-title">CazaOfertas · Blog</div>
+    </div>
+    <nav class="sidemenu">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="index.html#objetivo">Objetivo</a>
+      <a href="index.html#misionvision">Misión - Visión</a>
+      <a href="index.html#problema">Problema</a>
+      <a href="index.html#tecnologia">Tecnología</a>
+      <a href="index.html#metodologias">Levantamiento</a>
+      <a href="index.html#avances">Avances</a>
+      <a href="index.html#galeria">Galería</a>
+      <a class="active" href="evaluacion2.html">Evaluación II</a>
+      <a href="index.html#autor">Acerca de</a>
+    </nav>
+  </aside>
+
+  <!-- Topbar (móvil) -->
+  <header class="topbar">
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <div class="tb-brand">
+      <div class="logo">CO</div>
+      <span>Evaluación II</span>
+    </div>
+  </header>
+
+  <!-- Panel off-canvas (móvil) -->
+  <nav class="menu-panel" id="menuPanel" aria-hidden="true">
+    <a href="index.html#inicio">Inicio</a>
+    <a href="index.html#objetivo">Objetivo</a>
+    <a href="index.html#misionvision">Misión - Visión</a>
+    <a href="index.html#problema">Problema</a>
+    <a href="index.html#tecnologia">Tecnología</a>
+    <a href="index.html#metodologias">Levantamiento</a>
+    <a href="index.html#avances">Avances</a>
+    <a href="index.html#galeria">Galería</a>
+    <a class="active" href="evaluacion2.html">Evaluación II</a>
+    <a href="index.html#autor">Acerca de</a>
+  </nav>
+  <div class="menu-backdrop" id="menuBackdrop" aria-hidden="true"></div>
+
+  <main class="content">
+    <section class="page-head">
+      <h1>Evaluación II – Técnicas, Metodologías y Modelización</h1>
+      
+    </section>
+
+   <!-- 1. TÉCNICAS Y METODOLOGÍAS -->
+<section class="section" id="tecnicas">
+  <h2>1. Técnicas y Metodologías del Desarrollo de Sistemas</h2>
+
+  <!-- 1.1 Identificación de la metodología -->
+  <article class="card card-block">
+    <h3><span class="num">1.1</span> Identificación de la metodología</h3>
+    <p>
+      Para el desarrollo de <strong>CazaOfertas</strong> se seleccionó la metodología
+      <strong>Ciclo de Vida en Cascada</strong> por su enfoque <em>estructurado y secuencial</em>,
+      con fases bien delimitadas y documentación clara.
+    </p>
+
+    <div class="cards grid-2 gap-lg">
+      <!-- 1.1.1 Análisis de requisitos -->
+      <article class="card">
+        <h4><span class="num">1.1.1</span> Análisis de requisitos</h4>
+        <p>Levantamiento de necesidades de usuarios y comercios para definir objetivos y requerimientos.</p>
+        <details>
+          <summary>Ver más</summary>
+          <ul>
+            <li>Estrategias: encuestas y entrevistas (técnica de investigación de hechos).</li>
+            <li>Requisitos funcionales: registro/autenticación por roles, crear/gestionar ofertas,
+              filtros de búsqueda, vista en mapa.</li>
+            <li>Requisitos no funcionales: seguridad con JWT, diseño adaptable, integración con Google Maps.</li>
+          </ul>
+        </details>
+      </article>
+
+      <!-- 1.1.2 Diseño del sistema -->
+      <article class="card">
+        <h4><span class="num">1.1.2</span> Diseño del sistema</h4>
+        <p>Definición de estructura, datos y arquitectura.</p>
+        <details>
+          <summary>Ver más</summary>
+          <ul>
+            <li>Arquitectura cliente-servidor: RN/Expo (móvil) ↔ Node/Express (API) ↔ PostgreSQL (Supabase).</li>
+            <li>Modelos (detallados en la sección 2): E-R, DFD y red.</li>
+            <li>Objetivos: escalabilidad, seguridad y mantenibilidad.</li>
+          </ul>
+        </details>
+      </article>
+
+      <!-- 1.1.3 Implementación -->
+      <article class="card">
+        <h4><span class="num">1.1.3</span> Implementación / desarrollo</h4>
+        <p>Construcción de módulos y funcionalidades según el diseño.</p>
+        <details>
+          <summary>Tecnologías y funciones</summary>
+          <ul>
+            <li><strong>Frontend móvil:</strong> React Native + Expo.</li>
+            <li><strong>Backend:</strong> Node.js + Express.</li>
+            <li><strong>Base de datos:</strong> PostgreSQL (Supabase).</li>
+            <li><strong>Servicios:</strong> Google Maps API.</li>
+            <li>Funcionalidades: autenticación, CRUD de ofertas, búsqueda por categoría/distancia,
+                resultados en lista y mapa.</li>
+          </ul>
+        </details>
+      </article>
+
+      <!-- 1.1.4 Pruebas -->
+      <article class="card">
+        <h4><span class="num">1.1.4</span> Pruebas del sistema</h4>
+        <p>Verificación del funcionamiento antes del despliegue.</p>
+        <details>
+          <summary>Ver más</summary>
+          <ul>
+            <li>Pruebas funcionales por módulo.</li>
+            <li>Pruebas de integración (móvil ↔ API ↔ BD).</li>
+            <li>Usabilidad básica para asegurar una experiencia intuitiva.</li>
+          </ul>
+        </details>
+      </article>
+
+      <!-- 1.1.5 Despliegue -->
+      <article class="card">
+        <h4><span class="num">1.1.5</span> Despliegue / entrega</h4>
+        <p>Publicación para uso de usuarios finales.</p>
+        <details>
+          <summary>Ver más</summary>
+          <ul>
+            <li>API en <strong>Render.com</strong>.</li>
+            <li>Base de datos en <strong>Supabase</strong>.</li>
+            <li>Distribución móvil con <strong>Expo</strong> (Android inicialmente).</li>
+          </ul>
+        </details>
+      </article>
+
+      <!-- 1.1.6 Mantenimiento -->
+      <article class="card">
+        <h4><span class="num">1.1.6</span> Mantenimiento</h4>
+        <p>Corrección de errores y mejoras evolutivas tras el despliegue.</p>
+        <details>
+          <summary>Ver más</summary>
+          <ul>
+            <li>Actualizaciones, parches y optimizaciones.</li>
+            <li>Mejoras de funcionalidades según feedback.</li>
+          </ul>
+        </details>
+      </article>
+    </div>
+  </article>
+
+  <!-- 1.2 Aplicación de técnicas -->
+  <article class="card card-block">
+    <h3><span class="num">1.2</span> Aplicación de técnicas</h3>
+
+  <!-- 1.2.1 Técnica de investigación de hechos -->
+    <article class="card">
+  <h4><span class="num">1.2.1</span> Técnica de investigación de hechos</h4>
+  <p>
+    Obtención de evidencia directa sobre necesidades y expectativas de <strong>usuarios</strong> y
+    <strong>comercios</strong> para definir requisitos funcionales y no funcionales. Se aplicaron
+    <strong>encuestas breves (Google Forms)</strong> y <strong>entrevistas de 15–20 min</strong>
+    para profundizar en motivaciones y frustraciones.
+  </p>
+
+  <details open>
+    <summary>Resultados</summary>
+    <div class="cards grid-2">
+      <article class="card">
+        <h5>Usuarios</h5>
+        <ul>
+          <li>Interés en la app: <strong>83.3%</strong> respondió “Sí”.</li>
+          <li>Filtro prioritario: <strong>Precio</strong>.</li>
+          <li>Mapa: <strong>83.3%</strong> desea ver ofertas en <strong>mapa</strong> con distancia.</li>
+          <li>Datos críticos: <strong>Vigencia</strong> y <strong>Precio</strong> “muy importantes”.</li>
+          <li>Imágenes: preferencia por ver fotos del producto.</li>
+          <li>Confianza: tiendas verificadas y reseñas de otros usuarios.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h5>Comercios</h5>
+        <ul>
+          <li>Canal más usado: <strong>WhatsApp</strong>.</li>
+          <li>Frecuencia: predominan <strong>3–5 ofertas/mes</strong>.</li>
+          <li>Publicar desde el móvil: tendencia “muy importante”.</li>
+          <li>Interés en <strong>métricas</strong>: 83.3% (vistas, clics, aperturas en mapa).</li>
+          <li>Activar/Desactivar: lo consideran necesario.</li>
+          <li>Problemas: <strong>visibilidad</strong> y <strong>stock agotado</strong>.</li>
+        </ul>
+      </article>
+    </div>
+  </details>
+
+  <details>
+    <summary>Implicaciones de diseño</summary>
+    <ul>
+      <li><strong>Búsqueda/descubrimiento:</strong> filtros por distancia, categoría y palabra clave; resultados en lista y mapa mostrando distancia.</li>
+      <li><strong>Publicación rápida (móvil):</strong> Título, Precio/% desc., 1–3 fotos, Vigencia (inicio/fin) y botón Activar/Desactivar.</li>
+      <li><strong>Confianza:</strong> imágenes claras, datos de la tienda y, si aplica, verificación.</li>
+      <li><strong>Métricas (panel simple):</strong> vistas, clics en detalle y aperturas en mapa por oferta.</li>
+    </ul>
+  </details>
+
+  <!-- Evidencias -->
+  <div class="evidence-block">
+    <h5 class="evidence-title">Evidencias</h5>
+    <div class="evidence-grid">
+      <!-- Usuarios -->
+      <a class="evidence-card" target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSdw2Q9URt4Gfn6-uPXhb7_KpP9jgpXiNOX76RngMjWrUPBasw/viewform?usp=sharing&ouid=102369638282871931537">
+        <div class="evidence-emoji" aria-hidden="true"></div>
+        <div>
+          <strong>Encuesta Usuarios</strong>
+          <small>Google Form</small>
+        </div>
+      </a>
+
+      <a class="evidence-card" target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/17cUCGjSRzt9ZtfI9VM1rKb_exiqwKSwG_OzaM_cFj1M/edit?usp=sharing">
+        <div class="evidence-emoji" aria-hidden="true"></div>
+        <div>
+          <strong>Resultados Usuarios</strong>
+          <small>CSV/Sheet original</small>
+        </div>
+      </a>
+
+      <!-- Comercios -->
+      <a class="evidence-card" target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSf5-6AW_YXCUlTiUdUnMDsa4Apkwg4xSTiNluN0SaGoTbWt_g/viewform?usp=sharing&ouid=102369638282871931537">
+        <div class="evidence-emoji" aria-hidden="true"></div>
+        <div>
+          <strong>Encuesta Comercios</strong>
+          <small>Google Form</small>
+        </div>
+      </a>
+
+      <a class="evidence-card" target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1g2tjOSBn53uHM0U8Fa7BUvJ68ZEM-lovFEd6Zbhxtng/edit?usp=sharing">
+        <div class="evidence-emoji" aria-hidden="true"></div>
+        <div>
+          <strong>Resultados Comercios</strong>
+          <small>CSV/Sheet original</small>
+        </div>
+      </a>
+    </div>
+    
+  </div>
+    </article>
+
+
+   <!-- 1.2.2 Técnica de Desarrollo Conjunto de Aplicaciones (DCA / JRP) -->
+  <article class="card">
+    <h4><span class="num">1.2.2</span> Técnica de Desarrollo Conjunto de Aplicaciones (DCA)</h4>
+    <p>
+      Se preparó un <strong>Acta de Planeación Conjunta de Requerimientos (JRP)</strong> como base y registro formal de la sesión:
+      objetivo (priorizar el MVP), alcance (versión móvil para San Cristóbal), fecha/lugar, participantes (comercios y usuarios) y agenda.
+      El acta integra hallazgos de la investigación (precio como filtro principal, mapa con distancia, vigencia y fotos, métricas y
+      activar/desactivar ofertas). Consulta el documento en
+      <a href="index.html#evidencias">Levantamiento → Evidencias</a>.
+    </p>
+
+    <!-- Evidencia del Acta DCA -->
+  <div class="evidence-block">
+    <h5 class="evidence-title">Evidencia</h5>
+    <div class="evidence-grid">
+      <a 
+        class="evidence-card" 
+        target="_blank" 
+        rel="noopener" 
+        href="https://docs.google.com/document/d/1RAG9Zh2e6GgmcCGCLYSgwQ45XpZgzJVJJYQhw4Of-oA/edit?hl=es&tab=t.0#heading=h.divjaiz3e5jk"
+      >
+        <div class="evidence-emoji" aria-hidden="true">📄</div>
+        <div>
+          <strong>Acta DCA</strong>
+          <small>Google Docs</small>
+        </div>
+      </a>
+    </div>
+  </div>
+
+    <details open>
+      <summary>Resultados (funcionalidades priorizadas)</summary>
+      <ul>
+        <li>
+          <strong>Publicar oferta con fotos y vigencia</strong>
+          <ul>
+            <li><em>Por qué:</em> comercios publican 3–5 ofertas/mes; “muy importante”; usuarios exigen fotos, precio y vigencia.</li>
+            <li><em>Incluye:</em> título, precio, % descuento, 1–3 fotos, fechas inicio–fin; flujo de publicación simple desde móvil.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Búsqueda por precio (filtro + orden)</strong>
+          <ul>
+            <li><em>Por qué:</em> precio es el filtro prioritario.</li>
+            <li><em>Incluye:</em> rango mín–máx, orden asc/desc; mostrar precio y % descuento en tarjetas.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Lista/Mapa con distancia</strong>
+          <ul>
+            <li><em>Por qué:</em> 83.3% quiere mapa con distancia; foco en ofertas cercanas.</li>
+            <li><em>Incluye:</em> conmutador Lista/Mapa, pines con título–precio–distancia, acceso al detalle.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Activar/Desactivar oferta + estado de stock</strong>
+          <ul>
+            <li><em>Por qué:</em> necesidad de comercios; problemas de visibilidad y stock agotado.</li>
+            <li><em>Incluye:</em> palanca Activo/Inactivo; stock: normal/bajo/agotado (no listar inactivas/agotadas).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Métricas básicas para comercios</strong>
+          <ul>
+            <li><em>Por qué:</em> 83.3% solicita métricas.</li>
+            <li><em>Incluye:</em> vistas, clics en detalle y aperturas en mapa por oferta.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Contactar por WhatsApp desde la aplicación</strong>
+          <ul>
+            <li><em>Por qué:</em> canal de mensajería más usado.</li>
+            <li><em>Incluye:</em> botón “Contactar por WhatsApp” visible en el detalle de la oferta.</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+    
+  </article>
+    </article>
+
+
+</section>
+
+    <section>
+        <h2>2. Modelización de Sistemas</h2>
+        <!-- 2.1 Modelización de Datos -->
+<article class="card card-block" id="modelado-datos">
+  <h3><span class="num">2.1</span> Modelización de Datos</h3>
+
+  <!-- 2.1.1 Diagrama E-R -->
+  <article class="card">
+    <h4><span class="num">2.1.1</span> Diagrama Entidad–Relación (E-R)</h4>
+    <p class="muted">
+      Estructura base para soportar el MVP: publicación rápida de ofertas con fotos y vigencia,
+      descubrimiento por precio/distancia, métricas, activar/desactivar y contacto por WhatsApp.
+    </p>
+
+    <!-- Imagen -->
+    <div class="figure">
+      <img class="zoomable" src="./assets/img/Diagrama E-R.png" alt="Diagrama Entidad-Relación (ER)">
+    </div>
+
+    <!-- Método paso a paso -->
+    <details open>
+      <summary>Metodo paso a paso</summary>
+
+      <ul>
+        <li><strong>Alcance:</strong> versión móvil; foco en ofertas cercanas.</li>
+        <li><strong>Actores:</strong> <em>Usuario</em> (busca) y <em>Comercio</em> (publica).</li>
+        <li><strong>Flujos clave:</strong> publicar con fotos/vigencia; buscar por precio/distancia; vista en mapa; métricas; activar/desactivar; WhatsApp; confianza (tienda verificada).</li>
+      </ul>
+
+      <!-- Entidades y relaciones -->
+      <details open>
+        <summary>Entidades y relaciones</summary>
+        <div class="cards grid-2">
+          <article class="card">
+            <h5>Entidades</h5>
+            <ul>
+              <li><strong>Usuario:</strong> consumidor o propietario de comercio.</li>
+              <li><strong>Comercio:</strong> administrado por un usuario; ubicación geográfica.</li>
+              <li><strong>Oferta:</strong> título, precios, vigencia, estado/stock.</li>
+              <li><strong>Categoría:</strong> taxonomía básica.</li>
+              <li><strong>ImagenOferta:</strong> 1–3 fotos por oferta.</li>
+              <li><strong>EventoOferta:</strong> interacciones (vista, click, apertura_mapa, click_whatsapp).</li>
+              <li><strong>OfertaCategoria:</strong> puente N:M Oferta–Categoría.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h5>Relaciones</h5>
+            <ul>
+              <li>Usuario <strong>1:N</strong> Comercio (administra).</li>
+              <li>Comercio <strong>1:N</strong> Oferta (publica).</li>
+              <li>Oferta <strong>N:M</strong> Categoría (vía <em>OfertaCategoria</em>).</li>
+              <li>Oferta <strong>1:N</strong> ImagenOferta (tiene).</li>
+              <li>Oferta <strong>1:N</strong> EventoOferta (genera).</li>
+              <li>Usuario <strong>1:N</strong> EventoOferta (produce autenticado).</li>
+            </ul>
+          </article>
+        </div>
+      </details>
+
+      <!-- Atributos clave -->
+      <details>
+        <summary>Atributos clave por entidad</summary>
+        <div class="cards grid-2">
+          <article class="card">
+            <h6>Usuario</h6>
+            <p class="kv"><code class="field">id_usuario</code> (PK), <code class="field">nombre</code>, <code class="field">email</code>, <code class="field">hash_password</code>, <code class="field">rol</code>, <code class="field">fecha_registro</code>, <code class="field">estado</code></p>
+
+            <h6 class="mt">Comercio</h6>
+            <p class="kv"><code class="field">id_comercio</code> (PK), <code class="field">id_usuario</code> (FK), <code class="field">nombre_fantasia</code>, <code class="field">direccion</code>, <code class="field">latitud</code>, <code class="field">longitud</code>, <code class="field">verificado</code>, <code class="field">telefono_whatsapp</code>, <code class="field">fecha_alta</code></p>
+          </article>
+
+          <article class="card">
+            <h6>Oferta</h6>
+            <p class="kv"><code class="field">id_oferta</code> (PK), <code class="field">id_comercio</code> (FK), <code class="field">titulo</code>, <code class="field">descripcion</code>, <code class="field">precio_actual</code>, <code class="field">precio_original</code>, <code class="field">porcentaje_descuento</code>, <code class="field">fecha_inicio</code>, <code class="field">fecha_fin</code>, <code class="field">stock_estado</code> {normal,bajo,agotado}, <code class="field">activo</code></p>
+
+            <h6 class="mt">Categoría / OfertaCategoria</h6>
+            <p class="kv"><code class="field">id_categoria</code> (PK), <code class="field">nombre</code>, <code class="field">descripcion</code> | <code class="field">id_oferta</code> (FK), <code class="field">id_categoria</code> (FK)</p>
+
+            <h6 class="mt">ImagenOferta / EventoOferta</h6>
+            <p class="kv"><code class="field">id_imagen</code> (PK), <code class="field">id_oferta</code> (FK), <code class="field">url_imagen</code>, <code class="field">orden</code></p>
+            <p class="kv"><code class="field">id_evento</code> (PK), <code class="field">id_oferta</code> (FK), <code class="field">id_usuario</code> (FK), <code class="field">tipo_evento</code> {vista,click,apertura_mapa,click_whatsapp}, <code class="field">timestamp</code></p>
+          </article>
+        </div>
+      </details>
+
+      <!-- Reglas -->
+      <details>
+        <summary>Reglas y normalización</summary>
+        <ul>
+          <li><strong>3FN:</strong> Categorías separadas; <em>OfertaCategoria</em> evita duplicidad.</li>
+          <li><strong>Reglas:</strong>
+            <ul>
+              <li>Si <code>activo=false</code> o <code>stock_estado="agotado"</code>, la oferta no se lista.</li>
+              <li><code>fecha_fin ≥ fecha_inicio</code>; ofertas vencidas no se muestran.</li>
+              <li>Debe incluir al menos una imagen en publicación.</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
+
+      <!-- Geo -->
+      <details>
+        <summary>Soporte geoespacial y búsqueda</summary>
+        <ul>
+          <li><strong>Comercio:</strong> guarda coordenadas (<em>lat</em>, <em>long</em>).</li>
+          <li><strong>PostGIS:</strong> preparado para consultas por cercanía.</li>
+          <li><strong>Mapa:</strong> permite ordenar por distancia y mostrarla visualmente.</li>
+        </ul>
+      </details>
+
+    </details>
+  </article>
+
+ <!-- 2.2 Modelización de Procesos -->
+<article class="card card-block" id="modelado-procesos">
+  <h3><span class="num">2.2</span> Modelización de Procesos</h3>
+
+  <!-- 2.2.1 Diagrama DFD -->
+  <article class="card">
+    <h4><span class="num">2.2.1</span> Diagrama de Flujo de Datos (DFD)</h4>
+    <p class="muted">
+      Representa los procesos principales del sistema CazaOfertas, su interacción con los actores externos
+      y el flujo de datos entre la aplicación móvil, el backend y los almacenes de información.
+    </p>
+
+    <!-- Imagen: mantiene el lightbox -->
+    <div class="figure">
+      <img class="zoomable" src="./assets/img/Diagrama DFD.png" alt="Diagrama de Flujo de Datos (DFD)">
+    </div>
+
+    <!-- Método paso a paso -->
+    <details open>
+      <summary>Metodo paso a paso</summary>
+
+      <!-- 1. Alcance -->
+      <details open>
+        <summary>Definir alcance del sistema</summary>
+        <p>
+          El DFD abarca la <strong>aplicación móvil</strong> y el <strong>backend (API)</strong>,
+          enfocándose en la <em>publicación y descubrimiento de ofertas locales</em> con métricas básicas.
+          No incluye pasarelas de pago ni procesos logísticos.
+        </p>
+      </details>
+
+      <!-- 2. Entidades externas -->
+      <details>
+        <summary>Identificar entidades externas</summary>
+        <p>Derivadas de los casos de uso, encuestas y sesiones DCA:</p>
+        <ul>
+          <li><strong>Usuario:</strong> consulta ofertas.</li>
+          <li><strong>Comercio:</strong> publica y gestiona sus ofertas.</li>
+          <li><strong>Google Maps API:</strong> cálculo de distancias y visualización en mapa.</li>
+          <li><strong>WhatsApp:</strong> canal directo de contacto comercio–cliente.</li>
+        </ul>
+      </details>
+
+      <!-- 3. Procesos principales -->
+      <details>
+        <summary>Procesos principales</summary>
+        <div class="cards grid-2">
+          <article class="card">
+            <ul>
+              <li><strong>P1 Autenticación y Acceso:</strong> login, roles y perfiles de usuario/comercio.</li>
+              <li><strong>P2 Gestión de Ofertas:</strong> creación, edición, imágenes, activación/desactivación y control de stock.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <ul>
+              <li><strong>P3 Consulta / Filtros / Mapa:</strong> búsqueda por precio, categoría o distancia y vista en mapa.</li>
+              <li><strong>P4 Registro de Eventos y Métricas:</strong> almacenamiento de vistas, clics, aperturas (mapa/WhatsApp) y generación de reportes 7/30 días.</li>
+            </ul>
+          </article>
+        </div>
+      </details>
+
+      <!-- 4. Almacenes -->
+      <details>
+        <summary>Almacenes de datos</summary>
+        <p>Representan los repositorios persistentes usados por los procesos del sistema.</p>
+        <ul class="grid-2">
+          <li><strong>D1</strong> — Usuarios</li>
+          <li><strong>D2</strong> — Comercios</li>
+          <li><strong>D3</strong> — Ofertas</li>
+          <li><strong>D4</strong> — Categorías</li>
+          <li><strong>D5</strong> — Imágenes</li>
+          <li><strong>D6</strong> — Eventos</li>
+        </ul>
+      </details>
+
+      <!-- 5. Flujo de datos -->
+      <details>
+        <summary>Trazar flujo de datos</summary>
+        <ul>
+          <li>
+            <strong>Usuario → P3:</strong> envía criterios de búsqueda (precio, categoría, distancia, texto).  
+            <strong>P3 ↔ D3/D4:</strong> consulta ofertas/categorías.  
+            <strong>P3 ↔ Google Maps:</strong> obtiene distancias.  
+            <strong>P3 → Usuario:</strong> devuelve resultados (lista/mapa).  
+            <strong>P3 → WhatsApp:</strong> genera enlace de contacto.
+          </li>
+
+          <li>
+            <strong>Comercio → P2:</strong> envía alta/edición de oferta.  
+            <strong>P2 ↔ D3/D4/D5:</strong> guarda datos y media.  
+            <strong>P2 → Comercio:</strong> confirma publicación o actualización.
+          </li>
+
+          <li>
+            <strong>Usuario/Comercio → P4:</strong> envían interacciones y solicitudes de métricas.  
+            <strong>P4 ↔ D6:</strong> registra eventos.  
+            <strong>P4 → Comercio:</strong> muestra métricas agregadas.
+          </li>
+
+          <li>
+            <strong>Usuario/Comercio → P1:</strong> envían credenciales o actualización de perfil.  
+            <strong>P1 ↔ D1/D2:</strong> valida autenticación o datos.  
+            <strong>P1 → Usuario/Comercio:</strong> devuelve sesión válida o rechazo.
+          </li>
+        </ul>
+      </details>
+    </details>
+    </article>
+    </article>
+
+    <!-- 2.3 Modelización de Redes -->
+<article class="card card-block" id="modelado-redes">
+  <h3><span class="num">2.3</span> Modelización de Redes</h3>
+
+  <!-- 2.3.1 Diagrama de Conexión de Puestos -->
+  <article class="card">
+    <h4><span class="num">2.3.1</span> Diagrama de Conexión de Puestos</h4>
+    <p class="muted">
+      Vista de componentes y comunicaciones entre la app móvil, API, base de datos y servicios externos.
+    </p>
+
+    <!-- Imagen (mantiene lightbox) -->
+    <div class="figure">
+      <img class="zoomable" src="./assets/img/Conexion de puertos.png" alt="Diagrama de Conexión de Puestos / Red">
+    </div>
+
+    <!-- Resumen rápido -->
+    <div class="cards grid-2">
+      <article class="card">
+        <h5>Componentes</h5>
+        <ul>
+          <li><strong>App Android</strong> (RN/Expo)</li>
+          <li><strong>API</strong> Node/Express (Render)</li>
+          <li><strong>PostgreSQL + PostGIS</strong> (Supabase)</li>
+          <li><strong>Supabase Storage</strong> (imágenes)</li>
+          <li><strong>Google Maps API</strong> (geocálculo y mapa)</li>
+          <li><strong>WhatsApp</strong> (deeplink de contacto)</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h5>Conexiones clave</h5>
+        <ul>
+          <li>App ↔ API: <span class="pill">HTTPS 443</span></li>
+          <li>API ↔ BD: <span class="pill">TLS 5432</span> (PostgreSQL)</li>
+          <li>API ↔ Storage: <span class="pill">HTTPS</span></li>
+          <li>API ↔ Google Maps: <span class="pill">HTTPS + API Key</span></li>
+          <li>App → WhatsApp: <span class="pill">deeplink</span></li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Justificación -->
+    <details open>
+      <summary>Justificación del diseño de red</summary>
+      <p>
+        Este diagrama es clave porque traduce los requisitos del proyecto de CazaOfertas en una arquitectura concreta y entendible: muestra cómo la
+        <strong>app Android</strong> se comunica por <strong>HTTPS</strong> con la <strong>API</strong> en <strong>Node/Express</strong>, cómo esa API persiste datos y ejecuta
+        <strong>búsquedas por distancia</strong> en <strong>PostgreSQL/PostGIS</strong> de Supabase, gestiona imágenes en <strong>Supabase Storage</strong>, consume
+        <strong>Google Maps</strong> con <em>API Key</em> para geocálculo y habilita el contacto directo con el comercio mediante <strong>deeplink a WhatsApp</strong>.
+        Al explicitar qué componente habla con cuál, por qué protocolo y en qué puerto (<strong>HTTPS 443</strong>, <strong>TLS 5432</strong>), el modelo define límites y
+        responsabilidades, orienta la infraestructura y la configuración operativa, anticipa puntos críticos para monitoreo y backups, y deja un camino claro
+        para escalar con bajo costo manteniendo la <strong>calidad</strong> y la <strong>seguridad</strong> del sistema.
+      </p>
+    </details>
+  </article>
+</article>
+
+
+</article>
+    </section>    
+</main>
+
+  <footer>
+    © <span id="year"></span> CazaOfertas · Blog académico
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" hidden aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Cerrar">×</button>
+    <img id="lbImg" src="" alt="Vista ampliada">
+  </div>
+
+  <!-- JS: menú (reutilizable) -->
+  <script src="assets/js/menu.js" defer></script>
+
+  <!-- JS: lightbox simple para esta página -->
+  <script>
+    // Año en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lightbox
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      if (target.classList.contains('zoomable')) {
+        lbImg.src = target.src;
+        lbImg.alt = target.alt || 'Vista ampliada';
+        lb.removeAttribute('hidden');
+        lb.setAttribute('aria-hidden','false');
+        document.body.classList.add('menu-open'); // bloquea scroll detrás
+      }
+      if (target.id === 'lbClose' || target === lb) {
+        lb.setAttribute('hidden','true');
+        lb.setAttribute('aria-hidden','true');
+        lbImg.removeAttribute('src');
+        document.body.classList.remove('menu-open');
+      }
+    });
+
+    // Cerrar lightbox con ESC
+    document.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('lightbox');
+      if (e.key === 'Escape' && !lb.hasAttribute('hidden')) {
+        document.getElementById('lbClose').click();
+      }
+    });
+  </script>
+</body>
+</html>
