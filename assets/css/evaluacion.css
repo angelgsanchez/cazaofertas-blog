@@ -59,6 +59,8 @@ body {
 }
 .sb-title {
   font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.3px;
 }
 .sidemenu {
   display: flex;
